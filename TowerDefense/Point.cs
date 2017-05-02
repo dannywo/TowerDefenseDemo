@@ -20,14 +20,16 @@ namespace TowerDefense
         //Using Cartesian distance formula
         public double DistanceTo(int x, int y)
         {
-            int xDiff = X - x;
-            int yDiff = Y - y;
+            //int xDiff = X - x;
+            //int yDiff = Y - y;
 
-            int xDiffSquared = xDiff * xDiff;
-            int yDiffSquared = yDiff * yDiff;
+            //int xDiffSquared = xDiff * xDiff;
+            //int yDiffSquared = yDiff * yDiff;
 
-            var result = Math.Round(Math.Sqrt(xDiffSquared + yDiffSquared));
-            return result;
+            //var result = Math.Round(Math.Sqrt(xDiffSquared + yDiffSquared));
+            //return result;
+
+             return (int)Math.Sqrt(Math.Pow(X-x, 2) + Math.Pow(Y-y, 2));
         }
     }
 }
