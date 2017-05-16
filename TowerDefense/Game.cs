@@ -13,17 +13,34 @@ namespace TowerDefense
             Tower tower = new Tower();
             Map map = new Map(8, 5);
 
-            int area = map.Width * map.Height;
+            try
+            {
+                MapLocation maplocation = new MapLocation(20, 20, map);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("That map location is not on the map!");
+            }
 
-            Point point = new Point(4, 2);
-            bool isOnMap = map.OnMap(point);
-            Console.WriteLine(isOnMap); // return true
 
-            //point = new Point(8, 5);
-            //isOnMap = map.OnMap(point); // returns false
-            //Console.WriteLine(isOnMap);
+            //int area = map.Width * map.Height;
 
-            Console.WriteLine(point.DistanceTo(5, 5));
+            //MapLocation x = new MapLocation(4, 2);
+
+            //Point p = x;
+
+            //map.OnMap(new MapLocation(0, 0));
+
+            //bool isOnMap = map.OnMap(x);
+            //Console.WriteLine(isOnMap); // return true
+
+            ////point = new Point(8, 5);
+            ////isOnMap = map.OnMap(point); // returns false
+            ////Console.WriteLine(isOnMap);
+
+
+
+            //Console.WriteLine(x.DistanceTo(5, 5));
             Console.ReadKey();
         }
     }
