@@ -15,11 +15,30 @@ namespace TowerDefense
 
             try
             {
-                MapLocation maplocation = new MapLocation(20, 20, map);
+                Path path = new Path(
+                    new[] {
+                        new MapLocation(0,2, map),
+                        new MapLocation(1,2, map),
+                        new MapLocation(2,2, map),
+                        new MapLocation(3,2, map),
+                        new MapLocation(4,2, map)
+                        }
+                );
+
+                MapLocation location = path.GetLocation(8);
+                if (location != null)
+                {
+                    Console.WriteLine($"{location.X} , {location.Y}");
+                }
             }
-            catch (Exception)
+            //MapLocation method will throw an error
+            catch (OutOfBoundsException ex)
             {
-                Console.WriteLine("That map location is not on the map!");
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
 
 
